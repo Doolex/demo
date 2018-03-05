@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.snxun.mapper.SyrkZpxxMapper" >
+
+    <insert id="add" parameterType="com.snxun.entity.SyrkZpxx" >
+        INSERT INTO
+        tb_syrk_zpxx
+        (
+        xlh,
+        zt,
+        xplx,
+        rklb,
+        ryid,
+        dqm,
+        gmsfhm,
+        xm,
+        cjsj,
+        ssssx,
+        xp,
+        txh,
+        xpcd,
+        slh,
+        serial_no,
+        pcsdm,
+        rkxlh,
+        path,
+        status
+        )
+        VALUES
+        (
+        #{xlh},
+        #{zt},
+        #{xplx},
+        #{rklb},
+        #{ryid},
+        #{dqm},
+        #{gmsfhm},
+        #{xm},
+        #{cjsj},
+        #{ssssx},
+        #{xp},
+        #{txh},
+        #{xpcd},
+        #{slh},
+        #{serial_no},
+        #{pcsdm},
+        #{rkxlh},
+        #{path},
+        #{status}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.snxun.entity.SyrkZpxx" >
+        UPDATE
+        tb_syrk_zpxx
+        SET
+        <if test="zt != null">name = #{zt},</if>
+        <if test="xplx != null">name = #{xplx},</if>
+        <if test="rklb != null">name = #{rklb},</if>
+        <if test="ryid != null">name = #{ryid},</if>
+        <if test="dqm != null">name = #{dqm},</if>
+        <if test="gmsfhm != null">name = #{gmsfhm},</if>
+        <if test="xm != null">name = #{xm},</if>
+        <if test="cjsj != null">name = #{cjsj},</if>
+        <if test="ssssx != null">name = #{ssssx},</if>
+        <if test="xp != null">name = #{xp},</if>
+        <if test="txh != null">name = #{txh},</if>
+        <if test="xpcd != null">name = #{xpcd},</if>
+        <if test="slh != null">name = #{slh},</if>
+        <if test="serial_no != null">name = #{serial_no},</if>
+        <if test="pcsdm != null">name = #{pcsdm},</if>
+        <if test="rkxlh != null">name = #{rkxlh},</if>
+        <if test="path != null">name = #{path},</if>
+        <if test="status != null">name = #{status}</if>
+        WHERE
+        xlh = #{xlh}
+    </update>
+
+    <delete id="del" parameterType="com.snxun.entity.SyrkZpxx" >
+        DELETE FROM
+        tb_syrk_zpxx
+        WHERE
+        xlh =#{xlh}
+    </delete>
+
+    <select id="findList" resultType="com.snxun.entity.SyrkZpxx">
+        SELECT * FROM  tb_syrk_zpxx
+    </select>
+
+</mapper>
